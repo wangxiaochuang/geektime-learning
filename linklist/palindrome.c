@@ -8,7 +8,7 @@ typedef struct CNode {
 } Node;
 
 int isPalindrome(Node *head) {
-	Node *quick = head;
+    Node *quick = head;
     Node *slow = head;
     Node *p = NULL;
     Node *p1, *p2 = NULL;
@@ -28,9 +28,9 @@ int isPalindrome(Node *head) {
     return !(p1 || p2);
 }
 int main(int argc, char **argv) {
-    char *str = "asdfasdfasd";
+    char *str = "asdfasdfasdf";
     int i = 0;
-    Node *head = malloc(sizeof(Node));
+    Node *head = (Node *) malloc(sizeof(Node));
     Node *p = head;
     for (; i < strlen(str); i++) {
         Node *n = malloc(sizeof(Node));
@@ -39,7 +39,11 @@ int main(int argc, char **argv) {
         p->next = n;
         p = n;
     }
-	int ok = isPalindrome(p->next);
-    printf("ok? %d\n", ok);
+    int ok = isPalindrome(head->next);
+    if (ok) {
+        printf("yes\n");
+    } else {
+        printf("no\n");
+    }
     return 0;
 }
