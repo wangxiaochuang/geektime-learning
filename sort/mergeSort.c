@@ -19,6 +19,7 @@ void merge(int *arr, int start, int middle, int end) {
         tmp[k++] = arr[j++];
     }
     memcpy(arr + start, tmp, (end - start + 1) * sizeof(int));
+    free(tmp);
 }
 
 void mergeSort(int *arr, int start, int end) {
